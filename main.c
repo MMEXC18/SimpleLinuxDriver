@@ -5,21 +5,21 @@
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("mme, mme");
 
-static int simple_driver_init(void)
+static int mme_driver_init(void)
 {
       int result = 0;
-    printk( KERN_NOTICE "Simple-driver: Initialization started" );
+    printk( KERN_NOTICE "mme-driver: Initialization started" );
 
       result = register_device();
     return result;
 }
 
-static void simple_driver_exit(void)
+static void mme_driver_exit(void)
 {
-   printk( KERN_NOTICE "Simple-driver: Exiting" );
+   printk( KERN_NOTICE "mme-driver: Exiting" );
     unregister_device();
 }
 
 
-module_init(simple_driver_init);
-module_exit(simple_driver_exit);
+module_init(mme_driver_init);
+module_exit(mme_driver_exit);
